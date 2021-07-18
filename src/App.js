@@ -6,15 +6,13 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ErrorPage from "./pages/ErrorPage";
 import { Switch, Route } from "react-router-dom";
 
-import HomePageWithRedirect from "./pages/HomePageWithRedirect"; // <== IMPORT
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Switch>
-        {/* <Route exact path="/" component={HomePage} /> */}
-        <Route exact path="/" component={HomePageWithRedirect} />   {/* <== ADD */}
+        <Route exact path="/" component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/projects" component={ProjectsPage} />
 
