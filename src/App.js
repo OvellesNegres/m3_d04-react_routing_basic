@@ -16,7 +16,7 @@ function App() {
         <Route path="/about" component={AboutPage} />
         <Route path="/projects" component={ProjectsPage} />
 
-        <Route component={ErrorPage} />
+        <Route component={ErrorPage} />               {/*   <== ADD   */}
       </Switch>
     </div>
   );
