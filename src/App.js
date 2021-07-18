@@ -1,10 +1,11 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import ErrorPage from "./pages/ErrorPage";
-import { Switch, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";     // <== IMPORT
+import HomePage from "./pages/HomePage";      // <== IMPORT
+import AboutPage from "./pages/AboutPage";    // <== IMPORT
+import ProjectsPage from "./pages/ProjectsPage";   // <== IMPORT
+import ErrorPage from "./pages/ErrorPage";         // <== IMPORT
+
+import { Switch, Route } from "react-router-dom";  // <== IMPORT
 
 
 function App() {
@@ -15,8 +16,6 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/projects" component={ProjectsPage} />
-
-        <Route component={ErrorPage} />               {/*   <== ADD   */}
       </Switch>
     </div>
   );
