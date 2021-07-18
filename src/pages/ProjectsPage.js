@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
-// import projectsData from "./../projects-data.json";  // <== REMOVE
+import projectsData from "./../projects-data.json";
 
-function ProjectsPage (props) {                    // <== UPDATE
+function ProjectsPage (props) {
   const [projects, setProjects] = useState([]);
 
-  // This effect depends on `props.projectsData`.
-  // It will run on initial render, and every time
-  // when the `props.projectsData` updates.
+  // This effect will run only once on initial render.
+  // To do it we set the dependency array empty [].
   useEffect(() => {
-    setProjects(props.projectsData);                 // <== UPDATE
-  }, [props.projectsData]);                       // <== UPDATE
-
+    setProjects(projectsData);
+  }, []);
 
   return (
     <div>
