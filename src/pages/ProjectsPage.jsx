@@ -1,9 +1,8 @@
+import {Link} from "react-router-dom"
+
 export default function ProjectPage(props)
 {
     const {projects, match, history, location} = props
-
-    console.log("props from parent ROUTE: ",{projects, match, history, location})
-
     return (
     <div>
       <h1>Projects</h1>
@@ -11,7 +10,7 @@ export default function ProjectPage(props)
         return (
           <div key={project._id} className="project">
             <h3>{project.name}</h3>
-            <p>{project.technologies}</p>
+            <Link to={`/projects/${project._id}`}>Project details</Link>
           </div>
         );
       })}

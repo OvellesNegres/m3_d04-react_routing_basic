@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import ErrorPage from "./pages/ErrorPage";
 import { Switch, Route } from "react-router-dom";
 // import HomePageWithRedirect from "./pages/HomePageWithRedirect";
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Switch>
+        < Route path={"/projects/:id"} render={(props)=><ProjectDetailsPage {...props} projects={projectsData} />} />
         < Route path={"/projects"} render={(props)=><ProjectsPage {...props} projects={projectsData} />} />
         < Route path={"/about"} component={AboutPage} />
         < Route exact path={"/"} component={HomePage} />
