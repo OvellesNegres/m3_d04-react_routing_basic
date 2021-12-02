@@ -5,7 +5,7 @@ import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ErrorPage from "./pages/ErrorPage";
 import { Switch, Route } from "react-router-dom";
-import HomePageWithRedirect from "./pages/HomePageWithRedirect";
+// import HomePageWithRedirect from "./pages/HomePageWithRedirect";
 
 import projectsData from './projects-data.json';     // <== IMPORT 
 
@@ -13,6 +13,14 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Switch>
+        < Route path={"/projects"} render={(props)=><ProjectsPage {...props} projects={projectsData} />} />
+        < Route path={"/about"} component={AboutPage} />
+        < Route exact path={"/"} component={HomePage} />
+
+        <Route component={ErrorPage} />
+      </Switch>
+
     </div>
   );
 }
