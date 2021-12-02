@@ -13,22 +13,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Switch>
-        {/* <Route exact path="/" component={HomePage} /> */}
-        <Route exact path="/" component={HomePageWithRedirect} />
-        <Route path="/about" component={AboutPage} />
-        {/* <Route path="/projects" component={ProjectsPage} /> */}
-
-        <Route
-          exact
-          path="/projects"
-          render={(routeProps) => {
-            return <ProjectsPage {...routeProps} projects={projectsData} />;
-          }}
-        />
-
-        <Route component={ErrorPage} />
-      </Switch>
     </div>
   );
 }
